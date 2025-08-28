@@ -1,0 +1,175 @@
+/* Variables globales */
+:root {
+    --primary-blue: #0d6efd;
+    --hover-blue: #0b5ed7;
+    --dark-bg: #000000;
+    --card-bg: #ffffff;
+    --text-light: #000000;
+    --text-gray: #666;
+}
+
+/* Animaciones globales */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes aurora-drift {
+    0% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: hue-rotate(30deg) brightness(1.2);
+    }
+    100% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg) brightness(1);
+    }
+}
+
+/* Estilos base */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Fondo animado */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #000000;
+    overflow: hidden;
+}
+
+.background-container::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(13, 110, 253, 0.2) 0%, transparent 70%),
+        radial-gradient(circle at 80% 50%, rgba(13, 110, 253, 0.15) 0%, transparent 70%),
+        radial-gradient(circle at 50% 80%, rgba(13, 110, 253, 0.2) 0%, transparent 70%);
+    animation: aurora-drift 15s infinite alternate ease-in-out;
+}
+
+/* Elementos de interfaz */
+.card {
+    background-color: var(--card-bg);
+    backdrop-filter: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+/* Formularios */
+.form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    color: var(--text-light);
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-blue);
+    transform: translateY(-2px);
+}
+
+/* Enlaces */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--hover-blue);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Navbar */
+.navbar {
+    animation: slideIn 0.5s ease-out;
+}
+
+.nav-link {
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+    transform: translateY(-1px);
+}
+
+/* Mapa */
+#map {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Contenedor de contenido */
+.content-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Utilidades */
+.text-light { color: var(--text-light); }
+.text-gray { color: var(--text-gray); }
+
+/* Efectos hover */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Animaciones para elementos interactivos */
+.interactive-element {
+    transition: all 0.3s ease;
+}
+
+.interactive-element:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
