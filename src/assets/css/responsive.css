@@ -1,0 +1,80 @@
+/* Estilos responsivos para la aplicación BañoYa */
+
+/* Estilos generales responsivos */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ajustes para el navbar en modo responsivo */
+  .navbar-responsive {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  
+  .navbar-responsive .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .navbar-responsive .nav-link {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Filtros debajo del navbar en modo responsivo */
+  .filters-container {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(26, 32, 44, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+  }
+  
+  /* Ajustes para el login separado */
+  .login-container {
+    flex-direction: column;
+  }
+  
+  .login-section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  /* Ajustes para el mapa */
+  .map-container {
+    height: 50vh;
+  }
+  
+  /* Ajustes para el perfil de usuario */
+  .profile-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .profile-tab {
+    flex: 1 0 50%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .profile-tab {
+    flex: 1 0 100%;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}
